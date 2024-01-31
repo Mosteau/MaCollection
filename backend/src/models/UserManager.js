@@ -1,17 +1,14 @@
 const AbstractManager = require("./AbstractManager");
-const auth = require("../services/auth");
 
 class UserManager extends AbstractManager {
   constructor() {
     super({ table: "user" });
   }
 
-  async create({ firstname, lastname, email }) {
-    const hashedDefault = await auth.hashAString("welcometohubidea");
-
+  async create({ firstname, lastname, email, password }) {
     const [result] = await this.database.query(
       `INSERT INTO ${this.table} (firstname, lastname, email, password) VALUES (?, ?, ?, ?)`,
-      [firstname, lastname, email, hashedDefault]
+      [firstname, lastname, email, password]
     );
     return result;
   }
