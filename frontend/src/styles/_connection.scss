@@ -1,0 +1,233 @@
+.total-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--color);
+  height: 100vh;
+
+  .title {
+    font-size: 2rem;
+    padding: 20px;
+  }
+
+  .presentation {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  .form-connection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10%;
+    padding: 40px;
+    background-color: var(--background-color-2);
+    border-radius: 20px;
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 20px;
+
+      label {
+        margin-top: 10px;
+        font-size: 1rem;
+        font-family: var(--font-family-text);
+        margin-bottom: 10px;
+      }
+
+      input {
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 1rem;
+        font-family: var(--font-family-text);
+      }
+    }
+
+    .button-connection {
+      margin-top: 20px;
+      width: 100%;
+      height: 40px;
+      border-radius: 20px;
+      background-color: var(--background-color);
+      color: var(--color);
+      font-size: 1rem;
+      font-family: var(--font-family-text);
+      cursor: pointer;
+    }
+  }
+
+  .create-account {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-family: var(--font-family-text);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .button-create-account {
+      margin-top: 20px;
+      width: 120%;
+      height: 40px;
+      border-radius: 20px;
+      background-color: var(--background-color);
+      color: var(--color);
+      font-size: 1rem;
+      font-family: var(--font-family-text);
+      cursor: pointer;
+    }
+  }
+  .navlink-create-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    background-color: var(--background-color-2);
+    border-radius: 20px;
+    .popup-title {
+      font-size: 2rem;
+      font-family: var(--font-family-title);
+      margin-bottom: 20px;
+    }
+    .popup-text {
+      font-size: 1.5rem;
+      font-family: var(--font-family-text);
+      margin-bottom: 20px;
+    }
+    .popup-button {
+      width: 50%;
+      height: 40px;
+      border-radius: 20px;
+      background-color: var(--background-color);
+      color: var(--color);
+      font-size: 1.5rem;
+      font-family: var(--font-family-text);
+      cursor: pointer;
+    }
+  }
+  button {
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--background-color);
+    color: var(--color);
+    font-size: 1.5rem;
+    font-family: var(--font-family-text);
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .total-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+    color: var(--color);
+
+    .title {
+      font-size: 1.2rem;
+      padding: 20px;
+    }
+
+    .presentation {
+      font-size: 1.1rem;
+      padding: 10px;
+    }
+
+    .form-connection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 10%;
+      padding: 40px;
+      background-color: var(--background-color-2);
+      border-radius: 20px;
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+
+        label {
+          margin-top: 10px;
+          font-size: 1.1rem;
+          font-family: var(--font-family-text);
+          margin-bottom: 10px;
+        }
+
+        input {
+          width: 100%;
+          height: 40px;
+          border-radius: 20px;
+          padding: 10px;
+          font-size: 1.1rem;
+          font-family: var(--font-family-text);
+        }
+      }
+      .button-connection {
+        margin-top: 20px;
+        width: 70%;
+        height: 40px;
+        border-radius: 20px;
+        background-color: var(--background-color);
+        color: var(--color);
+        font-size: 1.1rem;
+        font-family: var(--font-family-text);
+        cursor: pointer;
+      }
+    }
+    .create-account {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      font-family: var(--font-family-text);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      .button-create-account {
+        margin-top: 20px;
+        width: 120%;
+        height: 40px;
+        border-radius: 20px;
+        background-color: var(--background-color);
+        color: var(--color);
+        font-size: 1.1rem;
+        font-family: var(--font-family-text);
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -7,16 +7,29 @@ const router = express.Router();
 /* ************************************************************************* */
 
 // Import itemControllers module for handling item-related operations
-const itemControllers = require("./controllers/itemControllers");
+const userControllers = require("./controllers/userControllers");
+const gamesControllers = require("./controllers/gamesControllers");
+const authControllers = require("./controllers/authControllers");
+// const { verifyToken } = require("./services/auth");
 
-// Route to get a list of items
-router.get("/items", itemControllers.browse);
+// ROAD AUTH
+router.post("/login", authControllers.login);
+router.post("/signin", authControllers.signin);
 
-// Route to get a specific item by ID
-router.get("/items/:id", itemControllers.read);
+// Auth wall
+// router.use(verifyToken);
 
-// Route to add a new item
-router.post("/items", itemControllers.add);
+// Road of users
+router.get("/users", userControllers.browse); // OK
+router.get("/users/:id", userControllers.read); // OK
+// router.get("/users-by-token", userControllers.readByToken);
+router.post("/users", userControllers.add); // OK
+
+// Road of games
+router.get("/games", gamesControllers.browse); // OK
+router.get("/games/:id", gamesControllers.read); // OK
+router.post("/games", gamesControllers.add); // OK
+router.delete("/games/:id", gamesControllers.destroy); // OK
 
 /* ************************************************************************* */
 

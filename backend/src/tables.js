@@ -4,9 +4,13 @@
 
 // Import the manager modules responsible for handling data operations on the tables
 const ItemManager = require("./models/ItemManager");
+const UserManager = require("./models/UserManager"); // Add other managers here etape 2
+const GamesManager = require("./models/GamesManager");
 
 const managers = [
   ItemManager,
+  UserManager,
+  GamesManager,
   // Add other managers here
 ];
 
@@ -23,7 +27,6 @@ managers.forEach((ManagerClass) => {
 /* ************************************************************************* */
 
 // Use a Proxy to customize error messages when trying to access a non-existing table
-
 // Export the Proxy instance with custom error handling
 module.exports = new Proxy(tables, {
   get(obj, prop) {

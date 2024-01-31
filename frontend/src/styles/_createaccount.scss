@@ -1,0 +1,62 @@
+.total-page-account {
+  background-color: var(--background-color);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-family: var(--font-family-title);
+    color: var(--color);
+  }
+
+  .form-create-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    margin-top: 5%;
+    padding: 40px;
+    background-color: var(--background-color-2);
+    border-radius: 20px;
+    color: var(--color);
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 20px;
+
+      label {
+        margin-top: 10px;
+        font-size: 1rem;
+        font-family: var(--font-family-text);
+        margin-bottom: 10px;
+      }
+
+      input {
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 0.8rem;
+        font-family: var(--font-family-text);
+      }
+    }
+    .button-create-account {
+      margin-top: 20px;
+      width: 100%;
+      height: 40px;
+      border-radius: 20px;
+      background-color: var(--background-color);
+      color: var(--color);
+      font-size: 1rem;
+      font-family: var(--font-family-text);
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

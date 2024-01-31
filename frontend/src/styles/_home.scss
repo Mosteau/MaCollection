@@ -1,0 +1,209 @@
+.total-home {
+  background-color: var(--background-color);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title-home {
+    font-size: 1.2rem;
+    padding: 20px;
+    color: var(--color);
+  }
+  .form-input-create-games {
+    border: 4px solid rgb(183, 178, 178);
+    width: 90%;
+    padding: 20px;
+
+    .form-create-games {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      color: var(--color);
+      font-family: var(--font-family-text);
+      font-size: 1.2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 45%;
+
+      .form-control {
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 0.8rem;
+        font-family: var(--font-family-text);
+      }
+    }
+    .form-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-basis: 100%;
+    }
+    .button-create-games {
+      margin-top: 20px;
+      width: 50%;
+      background-color: var(--background-color-2);
+      color: var(--color);
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 1.2rem;
+      font-family: var(--font-family-text);
+      cursor: pointer;
+      box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.75);
+      &:hover {
+        background-color: var(--background-color-3);
+        transform: translateY(2px);
+      }
+    }
+
+    .form-group label {
+      margin-bottom: 0.5em;
+    }
+
+    .form-group input {
+      flex-grow: 1;
+      font-family: var(--font-family-text);
+    }
+  }
+  .container-games-personnal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 20px;
+    gap: 20px;
+
+    .list-games {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 20px;
+      background-color: var(--background-color-2);
+      border-radius: 20px;
+      padding: 20px;
+      color: var(--color);
+      font-family: var(--font-family-text);
+      font-size: 1.2rem;
+      box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.75);
+
+      .card-games {
+        flex-basis: calc(33.33% - 20px);
+        margin-bottom: 20px;
+
+        .button-delete-games {
+          margin: 10px;
+          width: 100%;
+          background-color: rgb(116, 58, 58);
+          color: var(--color);
+          border: none;
+          border-radius: 10px;
+          padding: 10px;
+          font-size: 1rem;
+          font-family: var(--font-family-text);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .total-home {
+    background-color: var(--background-color);
+    height: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title-home {
+      font-size: 1.2rem;
+      padding: 20px;
+      color: var(--color);
+    }
+    .form-input-create-games {
+      border: 4px solid rgb(183, 178, 178);
+      width: 90%;
+      padding: 20px;
+      border-radius: 20px;
+
+      .form-create-games {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        color: var(--color);
+        font-family: var(--font-family-text);
+        font-size: 1.2rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 45%;
+      }
+      .button-create-games {
+        margin-top: 20px;
+        width: 50%;
+        background-color: var(--background-color-2);
+        color: var(--color);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 1.2rem;
+        font-family: var(--font-family-text);
+        cursor: pointer;
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.75);
+      }
+
+      .form-group label {
+        margin-bottom: 0.5em;
+      }
+
+      .form-group input {
+        flex-grow: 1;
+        font-family: var(--font-family-text);
+      }
+    }
+    .container-games-personnal {
+      .list-games {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+        background-color: var(--background-color-2);
+        border-radius: 20px;
+        padding: 20px;
+        color: var(--color);
+        font-family: var(--font-family-text);
+        font-size: 1.2rem;
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.75);
+
+        .card-games {
+          flex-basis: calc(33.33% - 20px);
+          margin-bottom: 20px;
+
+          .button-delete-games {
+            width: 100%;
+            background-color: rgb(116, 58, 58);
+            color: var(--color);
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            font-family: var(--font-family-text);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .card-games {
+      flex-basis: 100%;
+    }
+  }
+}
