@@ -45,6 +45,26 @@ class GamesManager extends AbstractManager {
     );
     return games;
   }
+
+  async update(id, { name, genre, platform, date }) {
+    const values = [name, genre, platform];
+    let query = `UPDATE ${this.table} SET name=?, genre=?, platform=?`;
+
+    if (date) {
+      const formattedDate = new Date(date)
+        .toISOString()
+        .slice(0, 19)
+        .replace("T", " ");
+      values.push(formattedDate);
+      query += `, date=?`;
+    }
+
+    query += " WHERE id=?";
+    values.push(id);
+
+    const [result] = await this.database.query(query, values);
+    return result;
+  }
 }
 
 module.exports = GamesManager;

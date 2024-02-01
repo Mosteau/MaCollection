@@ -26,8 +26,7 @@ router.get("/games/:id", gamesControllers.read); // OK
 router.post("/games", gamesControllers.add); // OK
 router.delete("/games/:id", gamesControllers.destroy); // OK
 router.get("/gamesByusers/:id", gamesControllers.browseByUser); // OK
-
-// Routes upload
+router.put("/games/:id", gamesControllers.update); // OK
 
 /* ************************************************************************* */
 

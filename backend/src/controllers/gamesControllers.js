@@ -50,10 +50,21 @@ const browseByUser = async (req, res, next) => {
   }
 };
 
+const update = async (req, res, next) => {
+  const game = req.body;
+  try {
+    await tables.games.update(req.params.id, game);
+    res.sendStatus(204);
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   browse,
   add,
   read,
   destroy,
   browseByUser,
+  update,
 };

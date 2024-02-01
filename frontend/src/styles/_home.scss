@@ -11,25 +11,28 @@
     padding: 20px;
     color: var(--color);
 
-    .button-logout {
+    .logout-div {
+      button {
+        background-color: var(--background-color);
+        border: none;
+      }
+    }
+    .image-logout {
       position: absolute;
       top: 5px;
       right: 5px;
-      width: 200px;
+      width: 50px;
       background-color: var(--background-color-2);
       color: var(--color);
-      border: none;
       border-radius: 10px;
       padding: 10px;
-      font-size: 1rem;
-      font-family: var(--font-family-text);
+
       cursor: pointer;
     }
   }
   .form-input-create-games {
-    background-image: url("/images/wallpaper.jpg"); 
-    background-size: cover; 
-    background-position: center;
+    background-color: var(--background-color-2);
+
     height: 55%;
     border: 4px solid rgb(183, 178, 178);
     border-radius: 20px;
@@ -55,9 +58,13 @@
         width: 100%;
         height: 40px;
         border-radius: 20px;
-        padding: 10px;
+        padding: 20px;
         font-size: 0.8rem;
         font-family: var(--font-family-text);
+      }
+      .form-control::placeholder {
+        font-weight: 10;
+        font-size: 0.8rem;
       }
     }
     .form-button {
@@ -94,19 +101,35 @@
       font-family: var(--font-family-text);
       color: var(--color);
     }
+
+    .filter-research {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      height: 40px;
+
+      .input-search-games {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 0.8rem;
+        font-family: var(--font-family-text);
+      }
+    }
   }
   .container-games-personnal {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
+    height: 100%;
     margin-top: 20px;
     gap: 20px;
 
     .list-games {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       margin-top: 20px;
       background-color: var(--background-color-2);
       border-radius: 20px;
@@ -115,6 +138,38 @@
       font-family: var(--font-family-text);
       font-size: 1.2rem;
       box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.75);
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+
+        .card-title {
+          font-size: 2rem;
+          font-family: var(--font-family-text);
+          color: rgb(95, 214, 121);
+          font-weight: 10;
+        }
+
+        .card-text {
+          font-size: 1.1rem;
+          font-family: var(--font-family-text);
+          color: var(--color);
+        }
+
+        .update {
+          .image-update {
+            width: 50px;
+            background-color: var(--background-color-2);
+            color: var(--color);
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+          }
+        }
+      }
 
       .card-games {
         flex-basis: calc(33.33% - 20px);
@@ -137,6 +192,59 @@
   }
 }
 
+.modal-update {
+  background-color: var(background-color, 0.5);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%;
+    gap: 20px;
+    width: 70%;
+    height: 50%;
+    padding: 20px;
+    background-color: var(--background-color-2);
+    border-radius: 20px;
+    color: var(--color);
+    font-family: var(--font-family-text);
+    font-size: 1.2rem;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.75);
+  }
+  input {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 0.8rem;
+    font-family: var(--font-family-text);
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 50%;
+    background-color: var(--background-color-2);
+    color: var(--color);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: var(--font-family-text);
+    cursor: pointer;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.75);
+    &:hover {
+      background-color: var(--background-color-3);
+      transform: translateY(2px);
+    }
+  }
+}
 @media (max-width: 768px) {
   .total-home {
     background-color: var(--background-color);
@@ -197,9 +305,8 @@
       .list-games {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
         width: 100%;
-        margin-top: 20px;
         background-color: var(--background-color-2);
         border-radius: 20px;
         padding: 20px;
@@ -228,6 +335,59 @@
     }
     .card-games {
       flex-basis: 100%;
+    }
+  }
+  .modal-update {
+    background-color: var(background-color, 0.5);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 15%;
+      gap: 20px;
+      width: 70%;
+      height: 60%;
+      padding: 20px;
+      background-color: var(--background-color-2);
+      border-radius: 20px;
+      color: var(--color);
+      font-family: var(--font-family-text);
+      font-size: 1.2rem;
+      box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.75);
+    }
+    input {
+      width: 100%;
+      height: 40px;
+      border-radius: 20px;
+      padding: 20px;
+      font-size: 0.8rem;
+      font-family: var(--font-family-text);
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      width: 50%;
+      background-color: var(--background-color-2);
+      color: var(--color);
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 1.2rem;
+      font-family: var(--font-family-text);
+      cursor: pointer;
+      box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.75);
+      &:hover {
+        background-color: var(--background-color-3);
+        transform: translateY(2px);
+      }
     }
   }
 }
