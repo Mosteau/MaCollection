@@ -1,3 +1,5 @@
+const argon2 = require("argon2");
+
 const tables = require("../tables");
 
 const login = async (req, res, next) => {
@@ -6,41 +8,20 @@ const login = async (req, res, next) => {
   try {
     const result = await tables.user.getByMail(email);
 
-    if (result && result[0]) {
-      const user = result[0];
-
-      if (user.password === password) {
-        const userWithoutPassword = {
-          id: user.id,
-          email: user.email,
-        };
-        res.json({
-          user: userWithoutPassword,
-        });
-      } else {
-        res.status(400).send("Incorrect email or password");
-      }
+    if (result == null) {
+      res.sendStatus(422);
+      return;
+    }
+    const verified = await argon2.verify(result.password, password);
+    if (verified) {
+      delete result.password;
+      res.json(result);
     } else {
-      res.status(400).send("Incorrect email or password");
+      res.status(422).send("Email or password incorrect");
     }
   } catch (err) {
     next(err);
   }
 };
 
-const signin = async (req, res, next) => {
-  const { email, password } = req.body;
-
-  try {
-    const result = await tables.user.create(email, password);
-    if (result.insertId) {
-      res.status(201).json({ message: "User created successfully" });
-    } else {
-      res.status(400).json({ message: "Failed to create user" });
-    }
-  } catch (err) {
-    next(err);
-  }
-};
-
-module.exports = { login, signin };
+module.exports = { login };

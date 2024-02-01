@@ -26,8 +26,6 @@ function Connection() {
         }
       );
       if (res.status === 200) {
-        const { user } = res.data;
-        setUser(user);
         setUser(res.data);
         naviguate("/home");
       } else {
@@ -44,7 +42,7 @@ function Connection() {
         <h1>Ma Collection</h1>
       </div>
       <div className="presentation">
-        <p>Créez ta collection de tes jeux vidéos favoris</p>
+        <p>Créez ta liste de jeux vidéos favoris</p>
       </div>
       <div>
         <form onSubmit={handleLogin} className="form-connection">

@@ -6,7 +6,7 @@
   align-items: center;
 
   .title {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 1.5rem;
     font-family: var(--font-family-title);
     color: var(--color);
@@ -17,7 +17,7 @@
     flex-direction: column;
     align-items: center;
     padding: 40px;
-    margin-top: 5%;
+    margin-top: 1%;
     padding: 40px;
     background-color: var(--background-color-2);
     border-radius: 20px;
@@ -26,9 +26,8 @@
     .form-group {
       display: flex;
       flex-direction: column;
-      align-items: center;
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
 
       label {
         margin-top: 10px;
@@ -60,3 +59,44 @@
     }
   }
 }
+
+.modal-create-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 30px;
+  background-color: var(--background-color-2);
+  border-radius: 20px;
+  color: var(--color);
+  width: 50%;
+  margin-top: 15%;
+  margin-left: 25%;
+
+  .modal-title {
+    font-size: 1.5rem;
+    font-family: var(--font-family-title);
+    color: var(--color);
+    margin-bottom: 20px;
+  }
+
+  .modal-text {
+    margin-bottom: 20px;
+  }
+
+  .button-create-account {
+    margin-top: 20px;
+    width: 20%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--background-color);
+    color: var(--color);
+    font-size: 1rem;
+    font-family: var(--font-family-text);
+    border: none;
+    cursor: pointer;
+  }
+}
+
+

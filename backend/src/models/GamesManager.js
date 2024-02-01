@@ -10,14 +10,14 @@ class GamesManager extends AbstractManager {
     return result;
   }
 
-  async create({ name, genre, platform, date }) {
+  async create({ userId, name, genre, platform, date }) {
     const formattedDate = new Date(date)
       .toISOString()
       .slice(0, 19)
       .replace("T", " ");
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (name, genre, platform, date) VALUES (?, ?, ?, ?)`,
-      [name, genre, platform, formattedDate]
+      `INSERT INTO ${this.table} (user_id, name, genre, platform, date) VALUES (?, ?, ?, ?, ?)`,
+      [userId, name, genre, platform, formattedDate]
     );
     return result;
   }
@@ -36,6 +36,14 @@ class GamesManager extends AbstractManager {
       [id]
     );
     return result;
+  }
+
+  async browseByUser(userId) {
+    const [games] = await this.database.query(
+      "SELECT * FROM games WHERE user_id = ?",
+      [userId]
+    );
+    return games;
   }
 }
 

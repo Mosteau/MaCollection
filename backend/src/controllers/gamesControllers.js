@@ -41,9 +41,19 @@ const destroy = async (req, res, next) => {
   }
 };
 
+const browseByUser = async (req, res, next) => {
+  try {
+    const games = await tables.games.browseByUser(req.params.id);
+    res.json(games);
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   browse,
   add,
   read,
   destroy,
+  browseByUser,
 };

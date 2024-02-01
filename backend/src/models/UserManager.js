@@ -5,10 +5,10 @@ class UserManager extends AbstractManager {
     super({ table: "user" });
   }
 
-  async create({ firstname, lastname, email, password }) {
+  async create({ firstname, lastname, email, hashedPassword }) {
     const [result] = await this.database.query(
       `INSERT INTO ${this.table} (firstname, lastname, email, password) VALUES (?, ?, ?, ?)`,
-      [firstname, lastname, email, password]
+      [firstname, lastname, email, hashedPassword]
     );
     return result;
   }
@@ -23,7 +23,7 @@ class UserManager extends AbstractManager {
       `SELECT * FROM ${this.table} WHERE email=?`,
       [email]
     );
-    return result;
+    return result[0];
   }
 
   async read(id) {
