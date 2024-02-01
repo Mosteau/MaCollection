@@ -99,7 +99,7 @@ function Home() {
     <div className="total-home">
       <div className="title-home">
         <button type="button" className="button-logout" onClick={handleLogout}>
-          Se déconnecter
+          Se déconnecter !
         </button>
         <h1>
           Collection de {fullUser?.firstname} {fullUser?.lastname}
