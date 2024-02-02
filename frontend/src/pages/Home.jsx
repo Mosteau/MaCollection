@@ -21,7 +21,7 @@ function Home() {
   const { user, setUser } = useContext(UserContext);
   const [fullUser, setFullUser] = useState(null);
   const [newGame, setNewGame] = useState({
-    userId: user.id,
+    userId: user?.id || "",
     name: "",
     genre: "",
     platform: "",

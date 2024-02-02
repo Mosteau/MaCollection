@@ -10,6 +10,7 @@
     font-size: 1.2rem;
     padding: 20px;
     color: var(--color);
+    text-shadow: 2px 2px 4px #000000;
 
     .logout-div {
       button {
@@ -31,8 +32,8 @@
     }
   }
   .form-input-create-games {
-    background-color: var(--background-color-2);
-
+    background-image: url("../../public/images/wallpaper-connection.png");
+    background-size: cover;
     height: 55%;
     border: 4px solid rgb(183, 178, 178);
     border-radius: 20px;
@@ -46,6 +47,8 @@
       justify-content: space-between;
       color: var(--color);
       font-family: var(--font-family-text);
+      text-shadow: 2px 2px 4px #000000;
+
       font-size: 1.2rem;
     }
 

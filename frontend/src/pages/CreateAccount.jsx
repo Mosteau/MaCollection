@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -44,6 +44,13 @@ function Createaccount() {
 
   return (
     <div className="total-page-account">
+      <div className="back-to-connexion">
+        <NavLink to="/">
+          <button type="button">
+            <img src="../../images/back.png" alt="back" />
+          </button>
+        </NavLink>
+      </div>
       <div className="title">
         <h1>Créer ton compte</h1>
       </div>

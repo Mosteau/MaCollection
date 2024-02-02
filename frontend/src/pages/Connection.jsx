@@ -42,7 +42,7 @@ function Connection() {
         <h1>Ma Collection</h1>
       </div>
       <div className="presentation">
-        <p>Créez ta liste de jeux vidéos favoris</p>
+        <p>Créer ta liste de jeux vidéos favoris</p>
       </div>
       <div>
         <form onSubmit={handleLogin} className="form-connection">

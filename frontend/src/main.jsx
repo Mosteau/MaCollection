@@ -8,6 +8,7 @@ import "./styles/index.scss";
 import Connection from "./pages/Connection";
 import Home from "./pages/Home";
 import Createaccount from "./pages/CreateAccount";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,14 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "/", element: <Connection /> },
-      { path: "/home", element: <Home /> },
+      {
+        path: "/home",
+        element: (
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        ),
+      },
       { path: "/createaccount", element: <Createaccount /> },
     ],
   },

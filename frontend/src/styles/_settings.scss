@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
 
 @font-face {
@@ -22,6 +21,7 @@ body :root {
   --background-color: #3d3b3b;
   --background-color-2: #2b2a2a;
   --color: rgb(232, 232, 232);
+  --color2: #2b2a2a;
   background-color: var(--background-color);
 }
 
