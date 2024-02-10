@@ -3,16 +3,14 @@
   flex-direction: column;
   align-items: center;
   color: var(--color);
-  height: 100vh;
   background-image: url("../../public/images/wallpaper-connection.png");
   background-size: cover;
+  height: 100%;
 
   .back-to-connexion {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
+    position: relative;
 
     button {
       border: none;
@@ -24,10 +22,13 @@
       height: 40px;
       cursor: pointer;
       background-color: none;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
   .title {
-    font-size: 2.3rem;
+    font-size: 2rem;
     text-shadow: 2px 2px 4px #000000;
   }
 
@@ -36,7 +37,6 @@
     flex-direction: column;
     align-items: center;
     padding: 40px;
-    margin-top: 1%;
     padding: 40px;
     background-color: var(--background-color-2);
     border-radius: 20px;
@@ -65,6 +65,7 @@
       }
     }
     .button-create-account {
+      position: relative;
       margin-top: 20px;
       width: 100%;
       height: 40px;
@@ -75,6 +76,12 @@
       font-family: var(--font-family-text);
       border: none;
       cursor: pointer;
+      transition: all 0.1s ease;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      &:active {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(4px);
+      }
     }
   }
 }
@@ -120,38 +127,21 @@
 
 @media screen and (max-width: 768px) {
   .total-page-account {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     color: var(--color);
-    height: 100vh;
     background-image: url("../../public/images/wallpaper-connection.png");
     background-size: cover;
+    height: 100vh;
 
     .back-to-connexion {
+      position: relative;
+      width: 100%;
       img {
         width: 20px;
         height: 20px;
       }
     }
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--color);
-    height: 100%;
-    background-image: url("../../public/images/wallpaper-connection.png");
-    background-size: cover;
-
     .title {
       font-size: 1.2rem;
-    }
-    .modal-create-account {
-      width: 90%;
-      margin-left: 5%;
-
-      .button-create-account {
-        width: 50%;
-      }
     }
   }
 }
