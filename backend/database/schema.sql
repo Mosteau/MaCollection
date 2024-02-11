@@ -64,3 +64,42 @@ VALUES (
     (
         5, 'God of War', 'Action-Adventure', 'PlayStation', '2018-04-20'
     );
+
+    CREATE TABLE movies (
+        id INT AUTO_INCREMENT PRIMARY KEY, user_id INT, name VARCHAR(100) NOT NULL, genre VARCHAR(100) NOT NULL, date DATE, FOREIGN KEY (user_id) REFERENCES user (id)
+    );
+
+    INSERT INTO
+    movies (
+        user_id, name, genre, date
+    )
+    VALUES (
+        1, 'The Shawshank Redemption', 'Drama', '1994-10-14'
+    ),
+    (
+        1, 'The Godfather', 'Crime', '1972-03-24'
+    ),
+    (
+        2, 'The Dark Knight', 'Action', '2008-07-18'
+    ),
+    (
+        2, 'Inception', 'Action', '2010-07-16'
+    ),
+    (
+        3, 'Pulp Fiction', 'Crime', '1994-10-14'
+    ),
+    (
+        3, 'Fight Club', 'Drama', '1999-11-10'
+    ),
+    (
+        4, 'Forrest Gump', 'Drama', '1994-07-06'
+    ),
+    (
+        4, 'The Matrix', 'Action', '1999-06-23'
+    ),
+    (
+        5, 'The Lord of the Rings: The Return of the King', 'Fantasy', '2003-12-17'
+    ),
+    (
+        5, 'The Lord of the Rings: The Fellowship of the Ring', 'Fantasy', '2001-12-19'
+    );

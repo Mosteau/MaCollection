@@ -11,6 +11,7 @@ const { hashPassword } = require("./services/auth");
 const userControllers = require("./controllers/userControllers");
 const gamesControllers = require("./controllers/gamesControllers");
 const authControllers = require("./controllers/authControllers");
+const moviesControllers = require("./controllers/moviesControllers");
 
 // ROAD AUTH
 router.post("/login", authControllers.login);
@@ -28,6 +29,13 @@ router.delete("/games/:id", gamesControllers.destroy); // OK
 router.get("/gamesByusers/:id", gamesControllers.browseByUser); // OK
 router.put("/games/:id", gamesControllers.update); // OK
 
+// Road of movies
+router.get("/movies", moviesControllers.browse); // OK
+router.get("/movies/:id", moviesControllers.read); // OK
+router.post("/movies", moviesControllers.add); // OK
+router.delete("/movies/:id", moviesControllers.destroy); // OK
+router.get("/moviesByusers/:id", moviesControllers.browseByUser); // OK
+router.put("/movies/:id", moviesControllers.update); // OK
 /* ************************************************************************* */
 
 module.exports = router;

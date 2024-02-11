@@ -6,11 +6,13 @@
 const ItemManager = require("./models/ItemManager");
 const UserManager = require("./models/UserManager"); // Add other managers here etape 2
 const GamesManager = require("./models/GamesManager");
+const MoviesManager = require("./models/MoviesManager");
 
 const managers = [
   ItemManager,
   UserManager,
   GamesManager,
+  MoviesManager,
   // Add other managers here
 ];
 
